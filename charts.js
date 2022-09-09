@@ -123,24 +123,33 @@ function buildCharts(sample) {
 
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
-      doman: {x: [0, 10]}
+      domain: { x: [0, 1], y: [0, 1] }, 
+      gauge: {
+        axis: {range: [null, 10]},
+        bar: {color: "black"},
+        steps: [
+          {range: [0,2], color: "red"},
+          {range: [2,4], color: "orange"},
+          {range: [4,6], color: "yellow"},
+          {range: [6,8], color: "light green"},
+          {range: [8,10], color: "green"}
+        ],
       value: samples,
-      title:
       type: "indicator",
       mode: "gauge+number",
     }
      
-    ];
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = {
-      title: "",
-      
-     
+      width: 500,
+      height: 400,
+      margin: {t: 25, r: 25, l: 25, b: 25},
+      paper_bgcolor: "White",
+      font: {color: "black", family: "Helvetica"}
     };
 
-    // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
-  });
-}
+// 6. Use Plotly to plot the gauge data and layout.
+Plotly.newPlot(“gauge”, gaugeData, gaugeLayout);
+});
 }
