@@ -135,7 +135,7 @@ function buildCharts(sample) {
           {range: [6,8], color: "light green"},
           {range: [8,10], color: "green"}
         ],
-      value: samples,
+      value: sample,
       type: "indicator",
       mode: "gauge+number",
     }}];
