@@ -125,7 +125,7 @@ function buildCharts(sample) {
     var gaugeData = [{
       domain: { x: [0, 1], y: [0, 1] }, 
       gauge: {
-        title: "Belly Button Washing Frequency", 
+        title: {text: "Belly Button Washing Frequency"}, 
         axis: {range: [null, 10]},
         bar: {color: "black"},
         steps: [
@@ -138,7 +138,7 @@ function buildCharts(sample) {
       value: samples,
       type: "indicator",
       mode: "gauge+number",
-    };
+    }}];
      
     
     // 5. Create the layout for the gauge chart.
