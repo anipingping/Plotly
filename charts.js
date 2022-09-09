@@ -63,8 +63,11 @@ function buildCharts(sample) {
     var samples = data.samples;
     // 4. Create a variable that filters the samples for the object with the desired sample number.
     var resultArray = samples.filter(sampleObj => sampleObj.id == sample);
+    var metadataArray = data.metadata.filter(sampleObj => sampleObj.id == sample);
     //  5. Create a variable that holds the first sample in the array.
     var result = resultArray[0];
+    var metadata = metadataArray[0];
+    var frequency = parseFloat(metadata.wfreq);
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otu_ids = result.otu_ids;
@@ -135,7 +138,7 @@ function buildCharts(sample) {
           {range: [6,8], color: "light green"},
           {range: [8,10], color: "green"}
         ],
-      value: sample,
+      value: frequency,
       type: "indicator",
       mode: "gauge+number",
     }}];
